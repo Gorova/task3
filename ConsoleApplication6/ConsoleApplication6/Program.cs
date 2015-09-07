@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,29 +11,30 @@ namespace ConsoleApplication6
     {
         static void Main(string[] args)
         {
-            CRUDClass<Customer> customers = new CRUDClass<Customer>();
-            CRUDClass<SoapProduct> soapProduct = new CRUDClass<SoapProduct>();
+                 SoapShopDB soapShopDB = new SoapShopDB();
+                 var component = new CRUDClass(soapShopDB);
+                 // adding
+                 //component.Add(new Customer { CustomerName = "Nata", CustomerPhone = "679011198" });
+                 //component.Save();
+                 //component.Add(new SoapProduct { Tittle = "Eucalyptus", Mass = 100, Price = 25.2M });
+                 //component.Save();
 
-            // adding
-            customers.Add(new Customer { CustomerName = "Nata", CustomerPhone = "679011198" });
-            customers.Save();
-            soapProduct.Add(new SoapProduct { Tittle = "Eucalyptus", Mass = 100, Price = 25.2M });
-            soapProduct.Save();
+                 ////delating
+                 var comp = soapShopDB.Set<Customer>().FirstOrDefault(i => i.CustomerName == "Nata");
+                 component.Delete(comp);
+                 component.Save();
 
-            //delating
-            customers.Delete<Customer>(2);
-            customers.Save();
+                 ////reading
+                 //var list = component.Get<Customer>();
+                 //foreach (var item in list)
+                 //{
+                 //    Console.WriteLine(item.Id + " " + item.CustomerName + " " + item.CustomerPhone + "\n");
+                 //}
 
-            //reading
-            var list = customers.Get<Customer>();
-            foreach(var item in list)
-            {
-                Console.WriteLine(item.Id + " " + item.CustomerName+ " " + item.CustomerPhone + "\n");
+                 ////// find one
+                 //var comp2 = component.Get<Customer>(3);
+                 //Console.WriteLine(comp2.CustomerName);
             }
-            
-            // find one
-            var comp = customers.Get<Customer>(1);
-            Console.WriteLine(comp.CustomerName);
-       }
+        }
     }
-}
+

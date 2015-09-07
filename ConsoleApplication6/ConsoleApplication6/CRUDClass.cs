@@ -1,47 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ConsoleApplication6
 {
-    public class CRUDClass<T>
-    {
-        SoapShopDB soapShopDB;
+     public class CRUDClass
+     {
+          DbContext context; 
        
-        public CRUDClass()
-        {
-           soapShopDB = new SoapShopDB();
-        }
+         public CRUDClass(DbContext context)
+         {
+            this.context = context;
+         }
+         
+         public void Add<T>(T data) where T : class
+         {
+            context.Set<T>().Add(data);
+         }
 
-    public void Add<T>(T data) where T:class
-        {
-            soapShopDB.Set<T>().Add(data);
-        }
+         public IEnumerable<T> Get<T>() where T : class
+         {
+           return context.Set<T>();
+         }
 
-    public IEnumerable<T> Get<T>() where T : class
-        {
-            return soapShopDB.Set<T>();
-        }
-
-    public T Get<T>(int id) where T:class
-        {
-           return soapShopDB.Set<T>().Find(id);
-        }
+         public T Get<T>(int id) where T : class
+         {
+           return context.Set<T>().Find(id);
+         }
              
-    public void Delete<T>(int id) where T:class
-       {
-           var comp = soapShopDB.Set<T>().Find(id);
-           if(comp != null)
-           {
-               soapShopDB.Set<T>().Remove(comp);
-           }
-       }
+         public void Delete<T>(T data) where T : class
+         {
+           context.Set<T>().Remove(data);
+         }
 
-    public void Save()
-       {
-            soapShopDB.SaveChanges();
-       }
+         public void Save()
+         {
+           context.SaveChanges();
+         }
     }
 }
