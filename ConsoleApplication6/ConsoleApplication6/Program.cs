@@ -14,25 +14,25 @@ namespace ConsoleApplication6
             var soapShopDb = new SoapShopDb();
             var component = new Repository(soapShopDb);
 
-            // adding
+            // Adding
             component.Add(new Customer { CustomerName = "Nata", CustomerPhone = "679011198" });
             component.Save();
             component.Add(new SoapProduct { Tittle = "Eucalyptus", Mass = 100, Price = 25.2M });
             component.Save();
 
-            ////delating
+            // Delating
             var comp = soapShopDb.Set<Customer>().FirstOrDefault(i => i.CustomerName == "Nata");
             component.Delete(comp);
             component.Save();
 
-            ////reading
+            // Reading
             var list = component.Get<Customer>();
             foreach (var item in list)
             {
                 Console.WriteLine(item.Id + " " + item.CustomerName + " " + item.CustomerPhone + "\n");
             }
 
-            //// find one
+            // Find one
             var comp2 = component.Get<Customer>(3);
             Console.WriteLine(comp2.CustomerName);
         }
