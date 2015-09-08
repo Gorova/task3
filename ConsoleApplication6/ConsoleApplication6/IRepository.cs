@@ -18,6 +18,4 @@ namespace ConsoleApplication6
 
         void Save();
     }
-
-    
 }
