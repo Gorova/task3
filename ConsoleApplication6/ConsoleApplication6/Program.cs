@@ -12,7 +12,7 @@ namespace ConsoleApplication6
         static void Main(string[] args)
         {
             var soapShopDb = new SoapShopDb();
-            var component = new CrudClass(soapShopDb);
+            var component = new Repository(soapShopDb);
 
             // adding
             component.Add(new Customer { CustomerName = "Nata", CustomerPhone = "679011198" });
