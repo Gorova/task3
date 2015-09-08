@@ -14,7 +14,7 @@ namespace ConsoleApplication6
             var soapShopDb = new SoapShopDb();
             var component = new Repository(soapShopDb);
 
-            // Adding
+            // Adding some entity
             component.Add(new Customer { CustomerName = "Nata", CustomerPhone = "679011198" });
             component.Save();
             component.Add(new SoapProduct { Tittle = "Eucalyptus", Mass = 100, Price = 25.2M });
