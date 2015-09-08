@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication6
 {
-   public class SoapShopDB:DbContext
+   public class SoapShopDb:DbContext
     {
-       public SoapShopDB() : base("SoapShopDB")
+       public SoapShopDb() : base("SoapShopDb")
        {
        }
        //public SoapShopDB()

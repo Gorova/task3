@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication6
 {
-     public class CRUDClass
+     public class CrudClass
      {
-          DbContext context; 
+         private DbContext context; 
        
-         public CRUDClass(DbContext context)
+         public CrudClass(DbContext context)
          {
             this.context = context;
          }
@@ -24,22 +24,22 @@ namespace ConsoleApplication6
 
          public IEnumerable<T> Get<T>() where T : class
          {
-           return context.Set<T>();
+            return context.Set<T>();
          }
 
          public T Get<T>(int id) where T : class
          {
-           return context.Set<T>().Find(id);
+            return context.Set<T>().Find(id);
          }
              
          public void Delete<T>(T data) where T : class
          {
-           context.Set<T>().Remove(data);
+            context.Set<T>().Remove(data);
          }
 
          public void Save()
          {
-           context.SaveChanges();
+            context.SaveChanges();
          }
-    }
+     }
 }
