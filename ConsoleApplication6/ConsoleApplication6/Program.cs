@@ -20,7 +20,7 @@ namespace ConsoleApplication6
             component.Add(new SoapProduct { Tittle = "Eucalyptus", Mass = 100, Price = 25.2M });
             component.Save();
 
-            // Delating
+            // Delating some entity
             var comp = soapShopDb.Set<Customer>().FirstOrDefault(i => i.CustomerName == "Nata");
             component.Delete(comp);
             component.Save();
