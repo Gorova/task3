@@ -8,3 +8,6 @@ c:\users\алёна\documents\visual studio 2013\Projects\ConsoleApplication6\Co
 c:\users\алёна\documents\visual studio 2013\Projects\ConsoleApplication6\ConsoleApplication6\bin\Debug\EntityFramework.SqlServer.xml
 c:\users\алёна\documents\visual studio 2013\Projects\ConsoleApplication6\ConsoleApplication6\obj\Debug\ConsoleApplication6.exe
 c:\users\алёна\documents\visual studio 2013\Projects\ConsoleApplication6\ConsoleApplication6\obj\Debug\ConsoleApplication6.pdb
+D:\task1\task3\ConsoleApplication6\ConsoleApplication6\bin\Debug\ConsoleApplication6.exe.config
+D:\task1\task3\ConsoleApplication6\ConsoleApplication6\obj\Debug\ConsoleApplication6.exe
+D:\task1\task3\ConsoleApplication6\ConsoleApplication6\obj\Debug\ConsoleApplication6.pdb
