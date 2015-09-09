@@ -25,7 +25,7 @@ namespace ConsoleApplication6
             component.Delete(comp);
             component.Save();
 
-            // Reading
+            // Reading some entity
             var list = component.Get<Customer>();
             foreach (var item in list)
             {
